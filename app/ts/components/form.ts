@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES,Router } from '@angular/router';
-import { NgForm }    from '@angular/common';
+
 
 
 
@@ -21,7 +21,7 @@ export class FormComponent {
   	age:""
   };
 
-  submit(){
+  enter(){
     console.log(this.info)
   	console.log("submitted")
    this.router.navigate(['/home']);

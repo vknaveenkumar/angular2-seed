@@ -1,17 +1,18 @@
-<h1>This is form </h1>
-<form #f="ngForm">
-     <label for="name">Name</label>
-     <input type="text" class="form-control" [(ngModel)]="info.name"    #name="ngForm" required>
-     <span *ngIf="!name.valid && !name.pristine" style="color:red;"><span>Title is Required</span></span><br><br>
-        
-     <label for="alterEgo">Age</label>
-     <input type="text" class="form-control" [(ngModel)]="info.age" ngControl="age" #age="ngForm" required>
-     <span *ngIf="!age.valid && !age.pristine" style="color:red;"><span>Age is Required</span></span><br><br>
-       
-       <div>
-        <button (click)="submit()" class="btn btn-default">Submit</button>
+<form   #heroForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="info.name" name="name"
+               #name="ngModel" >
+        <span *ngIf="!name.valid && !name.pristine" style="color:red;"><span>name is Required</span></span>
       </div>
 
-</form>
+      <div class="form-group">
+        <label for="alterEgo">Alter Ego</label>
+        <input type="text" class="form-control" id="alterEgo"
+               [(ngModel)]="info.age" name="alterEgo" >
+      </div>
 
- 
+      <button type="button" class="btn btn-default" (click)="enter()">ENTER</button>
+</form>
